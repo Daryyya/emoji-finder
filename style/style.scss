@@ -1,3 +1,50 @@
+@import "./_reset.scss";
+
 * {
     font-family: 'Inter', sans-serif;
+}
+
+.header {
+    position: relative;
+    &__wrapper {
+        padding: 68px 0px 100px;
+        background: linear-gradient(to right, #087990, #055160);
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 87px;
+        color: #CFF4FC;
+        margin-bottom: 4px;
+    }
+
+    &__subtitle {
+        text-align: center;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 36px;
+        color: #CFF4FC;
+    }
+}
+
+.form {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    
+}
+
+.input {
+    min-height: 64px;
+    min-width: 820px;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 21px;
+    color: #ABB5BE;
+    padding: 21.5px 32px;
 }
