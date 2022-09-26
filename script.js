@@ -4,7 +4,7 @@ function createCard (el) {
     const card = document.createElement('div');
     card.className = 'card';
 
-    const img = document.createElement('div');
+    const symbol = document.createElement('div');
     symbol.className = 'card__img';
     symbol.textContent = el.symbol;
 
@@ -12,9 +12,9 @@ function createCard (el) {
     title.className = 'card__title';
     title.textContent = el.title;
 
-    const desc = document.createElement('div');
+    const keywords = document.createElement('div');
     keywords.className = 'card__desc';
-    keywords.textContent = el.keywords;
+    keywords.textContent = fixKeyWords(el.keywords);
 
     card.append(symbol);
     card.append(title);
@@ -23,9 +23,19 @@ function createCard (el) {
     return card;
 }
 
+function fixKeyWords (el) {
+    return [...new Set(el.split(' '))].join(',')
+} 
+
 const wrapper = document.querySelector('.container');
 
 data.forEach(el => {
     wrapper.append(createCard(el));
 })
+
+
+
+let str = 'hello hello hello hi buy';
+
+console.log();
 

@@ -453,6 +453,8 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
+  max-width: 316px;
+  max-height: 184px;
 }
 .card__img {
   padding-bottom: 18px;
@@ -473,4 +475,5 @@ main {
   line-height: 15px;
   text-align: center;
   color: #3F444A;
+  max-width: 260px;
 }/*# sourceMappingURL=style.css.map */
