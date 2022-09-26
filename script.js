@@ -5,20 +5,20 @@ function createCard (el) {
     card.className = 'card';
 
     const img = document.createElement('div');
-    img.className = 'card__img';
-    img.textContent = el.symbol;
+    symbol.className = 'card__img';
+    symbol.textContent = el.symbol;
 
     const title = document.createElement('div');
     title.className = 'card__title';
     title.textContent = el.title;
 
     const desc = document.createElement('div');
-    desc.className = 'card__desc';
-    desc.textContent = el.keywords;
+    keywords.className = 'card__desc';
+    keywords.textContent = el.keywords;
 
-    card.append(img);
+    card.append(symbol);
     card.append(title);
-    card.append(desc);
+    card.append(keywords);
 
     return card;
 }
