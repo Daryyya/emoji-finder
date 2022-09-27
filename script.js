@@ -34,8 +34,50 @@ function createCard (el) {
     return card;
 }
 
-fixData(data).forEach(el => {
-    wrapper.append(createCard(el));
-})
+let fixArr = fixData(data);
+
+function showCards (arr) {
+    arr.forEach(el => { 
+        
+        wrapper.append(createCard(el))
+    })
+}
+
+showCards(fixArr);
+
+const input = document.querySelector('input');
+
+input.addEventListener('change', getValue)
+
+function getValue (event) {
+    let value = event.target.value;
+    let sortArr = fixArr.filter(el => el.keywords.split(',').includes(value));
+    wrapper.innerHTML = '';
+    showCards(sortArr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
