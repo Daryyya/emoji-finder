@@ -75,6 +75,8 @@
 
 main {
     background-color:#EDEEF3;
+    background-repeat: repeat-x;
+    min-height: 100vh;
 }
 
 .container {
@@ -83,7 +85,7 @@ main {
     max-width: 986px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: minmax(300px, 316px) minmax(300px, 316px) minmax(300px, 316px);
     gap: 19px;
 
     @media (max-width: 992px) {

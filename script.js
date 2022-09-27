@@ -47,13 +47,21 @@ showCards(fixArr);
 
 const input = document.querySelector('input');
 
-input.addEventListener('change', getValue)
+input.addEventListener('input', getValue)
 
 function getValue (event) {
-    let value = event.target.value;
-    let sortArr = fixArr.filter(el => el.keywords.split(',').includes(value));
-    wrapper.innerHTML = '';
-    showCards(sortArr);
+    
+    let value = event.target.value.trim();
+
+    if (value) {
+        let sortArr = fixArr.filter(el => el.title.toLowerCase().includes(value) || el.keywords.toLowerCase().includes(value));
+        wrapper.innerHTML = '';
+        showCards(sortArr)
+    }
+    else {
+        wrapper.innerHTML = '';
+        showCards(fixArr);
+    }
 }
 
 
