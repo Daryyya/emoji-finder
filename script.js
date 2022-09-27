@@ -1,5 +1,7 @@
 import {data} from './emoji.js';
 
+const wrapper = document.querySelector('.container');
+
 function fixData (data) {
    data.forEach(el => {
     el.keywords = [...new Set(el.keywords.split(' '))].join(',');
@@ -32,19 +34,8 @@ function createCard (el) {
     return card;
 }
 
-// function fixKeyWords (el) {
-//     return [...new Set(el.split(' '))].join(',')
-// } 
-
-const wrapper = document.querySelector('.container');
-
 fixData(data).forEach(el => {
     wrapper.append(createCard(el));
 })
 
-
-
-let str = 'hello hello hello hi buy';
-
-console.log();
 
