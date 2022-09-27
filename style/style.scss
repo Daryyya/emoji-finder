@@ -38,13 +38,13 @@
     max-height: 64px;
 }
 
-.form {}
+// .form {
+   
+// }
 
 .input {
-    // max-height: 64px;
-    // max-width: 820px;
-    width: 100%;
-    height: 100%;
+    width: 820px;
+    height: 64px;
     border: 1px solid #CED4DA;
     border-radius: 4px;
     font-weight: 400;
@@ -52,6 +52,22 @@
     line-height: 21px;
     color: #ABB5BE;
     padding: 21.5px 32px;
+}
+
+@media (max-width: 992px) {
+    .input {
+        width: 600px;
+        height: 64px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .input {
+        width: 400px;
+        height: 64px;
+    }
+    
 }
 
 
@@ -69,6 +85,17 @@ main {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 19px;
+
+    @media (max-width: 992px) {
+        grid-template-columns: minmax(300px, 316px) minmax(300px, 316px);
+        justify-content: center;
+        
+    }
+    @media (max-width: 768px) {
+        grid-template-columns: minmax(300px, 316px);
+        justify-content: center;
+        
+    }
 }
 
 .card {
@@ -79,8 +106,8 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    max-width: 316px;
-    max-height: 184px;
+    min-width: 316px;
+    min-height: 184px;
 
     &__img {
         padding-bottom: 18px;
@@ -102,5 +129,6 @@ main {
         text-align: center;
         color: #3F444A;
         max-width: 260px;
+        word-break: break-word;
     }
 }

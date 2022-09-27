@@ -1,5 +1,14 @@
 import {data} from './emoji.js';
 
+function fixData (data) {
+   data.forEach(el => {
+    el.keywords = [...new Set(el.keywords.split(' '))].join(',');
+   })
+   return data;
+}
+
+
+
 function createCard (el) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -14,7 +23,7 @@ function createCard (el) {
 
     const keywords = document.createElement('div');
     keywords.className = 'card__desc';
-    keywords.textContent = fixKeyWords(el.keywords);
+    keywords.textContent = el.keywords;
 
     card.append(symbol);
     card.append(title);
@@ -23,13 +32,13 @@ function createCard (el) {
     return card;
 }
 
-function fixKeyWords (el) {
-    return [...new Set(el.split(' '))].join(',')
-} 
+// function fixKeyWords (el) {
+//     return [...new Set(el.split(' '))].join(',')
+// } 
 
 const wrapper = document.querySelector('.container');
 
-data.forEach(el => {
+fixData(data).forEach(el => {
     wrapper.append(createCard(el));
 })
 
