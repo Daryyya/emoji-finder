@@ -39,14 +39,14 @@ function showCards (arr) {
     })
 }
 function getValue (arr, event) {
-    let value = event.target.value.trim().split(' ', 2);
+    wrapper.innerHTML = '';
+    let value = event.target.value.trim().split(' ');
+    console.log(value);
     if (value) {
         let sortArr = arr.filter(el => el.title.toLowerCase().includes(value) || el.keywords.toLowerCase().includes(value));
-        wrapper.innerHTML = '';
         showCards(sortArr)
     }
     else {
-        wrapper.innerHTML = '';
         showCards(arr);
     }
 }
@@ -58,7 +58,7 @@ function main (arr) {
 
 // 1
 
-// let promise = fetch(url)
+// let promise = fetch('http://localhost:3000/get/emoji')
 //     .then((res) => res.json())
 //     .then((data) => main(fixData(data)));
 
@@ -85,9 +85,11 @@ function main (arr) {
 // 4
 
   async function getData () {
-    let res = await fetch(url);
+    let res = await fetch('http://localhost:3000/get/emoji');
     let data =  await res.json();
-    return data;
+
+    console.log(data)
+    return JSON.parse(data);
 }
 
 let arr = await getData();
